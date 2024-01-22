@@ -81,13 +81,13 @@
 // function HammingDistance(starArr){
 //     let count =0;
 //     for(let i =0 ; i<starArr[0].length ; i++){
-//         if(starArr[0][i] !== starArr[1][0]){
+//         if(starArr[0][i] !== starArr[1][i]){
 //             count ++;
 //         }
 //     }
 //     return count;
 // }
-// const ans = HammingDistance(["nirav", "nirav"]);
+// const ans = HammingDistance(["nirav","nirav"]);
 // console.log(ans);
 
 //-----------------------------------------------------------------//
@@ -102,8 +102,8 @@
 // function BitwiseOne(strArr){
 //     let result = "";
 //     for (let i = 0 ; i < strArr[0].length ; i++){
-//         result += parseInt(strArr[0][i]) |parseInt( strArr[1][i]).toString();
-       
+//         result += parseInt(strArr[0][i]) | parseInt( strArr[1][i]).toString();
+
 //     }
 //     return result;
 // }
@@ -157,7 +157,7 @@
 //     const result = [];
 //     for(let i=0 ; i< length ; i++){
 //         let sum = (arr1[i] || 0) +(arr2[i] || 0 ) 
-       
+
 //          result.push(sum);
 //     }
 //     return result.join('-')
@@ -183,7 +183,7 @@
 //     }
 //      for(let i = 0 ; i <binary.length ; i++){
 //         newstr = binary[i] + newstr ; 
-        
+
 //      }
 //      return parseInt(newstr , 2); 
 // }
@@ -205,18 +205,170 @@
 // a palindrome.
 
 
-function NextPalindrome(num){
-    num++
-    while(!isplindrome(num)){
-        num++;
-    }
-    return num;
+// function NextPalindrome(num){
+//     num++
+//     while(!isplindrome(num)){
+//         num++;
+//     }
+//     return num;
+// }
+
+// function isplindrome(num){
+//     let numstr = num.toString();
+//     return numstr === numstr.split('').reverse().join('');
+
+// }
+
+// console.log(NextPalindrome(180))
+
+//--------------------------------------------------------------------------------------//
+
+// Have the function LargestPair(num) take the num parameter being passed and determine
+// the largest double digit number within the whole number. For example: if num is 4759472 then
+// your program should return 94 because that is the largest double digit number. The input will
+// always contain at least two positive digits.
+
+// function LargestPair(num){
+//     let strarr = num.toString();
+//     let maxpair = 0;
+//     for(let i= 0 ; i < strarr.length - 1 ; i++){
+//         const currentpair = parseInt(strarr.substr(i,2));
+//         maxpair = Math.max(currentpair , maxpair);
+//     }
+
+//     return maxpair
+// }
+// console.log(LargestPair(453857))
+
+//=-----------------------------------------------------------------------------------------//
+
+// Have the function NonrepeatingCharacter(str) take the str parameter being passed,
+// which will contain only alphabetic characters and spaces, and return the first non-repeating
+// character. For example: if str is "agettkgaeee" then your program should return k. The string
+// will always contain at least one character and there will always be at least one non-repeating
+// character.
+
+// function NonrepeatingCharacter(str) {
+//     let len = str.length;
+//     let countObj = {}
+//     for (let i = 0; i < len; i++) {
+//         if (countObj[str[i]]) {
+//             countObj[str[i]]++;
+            
+//         }
+//         else {
+//             countObj[str[i]] = 1;
+//         }
+//     }
+//     for (let j = 0; j < len; j++) {
+//         if (countObj[str[j]] === 1) 
+//         return str[j];
+//     }
+// }
+// console.log(NonrepeatingCharacter("agettkgaeee"))
+
+
+//------------------------------------------------------------------------------------//
+
+
+// Have the function LongestIncreasingSequence(arr) take the array of positive integers
+// stored in arr and return the length of the longest increasing subsequence (LIS). A LIS is a
+// subset of the original list where the numbers are in sorted order, from lowest to highest, and
+// are in increasing order. The sequence does not need to be contiguous or unique, and there can
+// be several different subsequences. For example: if arr is [4, 3, 5, 1, 6] then a possible LIS is [3,
+// 5, 6], and another is [1, 6]. For this input, your program should return 3 because that is the
+// length of the longest increasing subsequence.
+
+// function LongestIncreasingSequence(arr){
+// }
+
+//------------------------------------------------------------------------------------------//
+
+// Have the function TwoSum(arr) take the array of integers stored in arr, and determine if any
+// two numbers (excluding the first element) in the array can sum up to the first element in the
+// array. For example: if arr is [7, 3, 5, 2, -4, 8, 11], then there are actually two pairs that sum to
+// the number 7: [5, 2] and [-4, 11]. Your program should return all pairs, with the numbers
+// separated by a comma, in the order the first number appears in the array. Pairs should be
+// separated by a space. So for the example above, your program would return: 5,2 -4,11
+// If there are no two numbers that sum to the first element in the array, return -1
+
+// function Twosum(arr){
+//     let target = arr[0];
+//     let visitedn  = {};
+//     let pair = [];
+//     for ( let i = 1 ; i <arr.length ; i++){
+//         let complete = target - arr[i];
+//         if(visitedn[complete] !== undefined){
+//             pair.push(`${complete},${arr[i]}`);
+//         }else{
+//             visitedn[arr[i]] = true;
+//         }
+//     }
+//     if(pair.length >0){
+//         return pair.join(' ');
+//     }else{
+//         return -1;
+//     }
+// }
+
+// console.log(Twosum([17, 4, 5, 6, 10, 11, 4, -3, -5, 3, 15, 2, 7]))
+
+//-------------------------------------------------------------------------------//
+
+// Have the function BitwiseTwo(strArr) take the array of strings stored in strArr, which will
+// only contain two strings of equal length that represent binary numbers, and return a final binary
+// string that performed the bitwise AND operation on both strings. A bitwise AND operation
+// places a 1 in the new string where there is a 1 in both locations in the binary strings, otherwise
+// it places a 0 in that spot. For example: if strArr is ["10111", "01101"] then your program
+// should return the string "00101"
+  
+// function BitwiseTwo(strArr){
+//     let result = '';
+//     let arr1 = strArr[0];
+//     let arr2 = strArr[1];
+//     for(let i =0 ; i < arr1.length ; i++){
+//         if((arr1[i]===1) && arr2[i] === 1){
+//             result += '1';
+//             continue;
+//         }else{
+//             result += '0'
+//             continue;
+//         }
+//     }
+//     return result;
+// }
+
+// console.log(BitwiseTwo(["100", "000"]))
+
+//-----------------------------------------------------------------------------------------//
+
+// Have the function PowerSetCount(arr) take the array of integers stored in arr, and return
+// the length of the power set (the number of all possible sets) that can be generated. For
+// example: if arr is [1, 2, 3], then the following sets form the power set:
+// []
+// [1]
+// [2]
+// [3]
+// [1, 2]
+// [1, 3]
+// [2, 3]
+// [1, 2, 3]
+// You can see above all possible sets, along with the empty set, are generated. Therefore, for this
+// input, your program should return 8.
+
+// function PowerSetCount(arr){
+//     return Math.pow(2,arr.length);
+// }
+// console.log(PowerSetCount([2,4,6,8,]));
+//----------------------------------------------------------------------------------------/
+
+// Have the function ProductDigits(num) take the num parameter being passed which will be a
+// positive integer, and determine the least amount of digits you need to multiply to produce it. For
+// example: if num is 24 then you can multiply 8 by 3 which produces 24, so your program should
+// return 2 because there is a total of only 2 digits that are needed. Another example: if num is 90,
+// you can multiply 10 * 9, so in this case your program should output 3 because you cannot reach
+// 90 without using a total of 3 digits in your multiplication.
+
+function ProductDigits(num){
+    
 }
-
-function isplindrome(num){
-    let numstr = num.toString();
-    return numstr === numstr.split('').reverse().join('');
-
-}
-
-console.log(NextPalindrome(180))
