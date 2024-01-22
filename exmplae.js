@@ -254,7 +254,7 @@
 //     for (let i = 0; i < len; i++) {
 //         if (countObj[str[i]]) {
 //             countObj[str[i]]++;
-            
+
 //         }
 //         else {
 //             countObj[str[i]] = 1;
@@ -321,7 +321,7 @@
 // places a 1 in the new string where there is a 1 in both locations in the binary strings, otherwise
 // it places a 0 in that spot. For example: if strArr is ["10111", "01101"] then your program
 // should return the string "00101"
-  
+
 // function BitwiseTwo(strArr){
 //     let result = '';
 //     let arr1 = strArr[0];
@@ -369,6 +369,92 @@
 // you can multiply 10 * 9, so in this case your program should output 3 because you cannot reach
 // 90 without using a total of 3 digits in your multiplication.
 
-function ProductDigits(num){
-    
-}
+// function ProductDigits(num) {
+//     let minDigits = Infinity;
+
+//     for (let i = 1; i <= Math.sqrt(num); i++) {
+//       if (num % i === 0) {
+//         const factor1 = i;
+//         const factor2 = num / i;
+//         const currentDigits = Math.max(factor1.toString().length, factor2.toString().length);
+//         minDigits = Math.min(minDigits, currentDigits);
+//       }
+//     }
+
+//     return minDigits;
+//   }
+
+//   // Example usage
+//   console.log(ProductDigits(24)); // Output: 2
+//   console.log(ProductDigits(90)); // Output: 3
+
+//---------------------------------------------------------------------------------------//
+
+// Have the function PalindromeCreator(str) take the str parameter being passed and
+// determine if it is possible to create a palindromic string of minimum length 3 characters by
+// removing 1 or 2 characters. For example: if str is "abjchba" then you can remove the
+// characters jc to produce "abhba" which is a palindrome. For this example your program should
+// return the two characters that were removed with no delimiter and in the order they appear in
+// the string, so jc. If 1 or 2 characters cannot be removed to produce a palindrome, then return
+// the string not possible. If the input string is already a palindrome, your program should return
+// the string palindrome.
+
+// function PalindromeCreator(str){
+
+//     function ispalindrome(s){
+//         return s === s.split('').reverse().join('');
+//     }
+//        if(ispalindrome(str)){
+//         return "Palindrom"
+//     }
+//     for(let i= 0 ; i <str.length ; i++){
+//         for (let j = i + 1 ; j < str.length ; j++){
+//             const final = str.slice(0 , i) + str.slice(i+1 , j ) + str.slice(j + 1);
+//             console.log(final);
+//             if(ispalindrome(final)){
+//                 return str[i] + str[j];
+//             }
+//         }
+//     }
+//     for(let i=0 ; i < str.length -1 ; i++){
+//         const final = str.slice(0 , i) + str.slice(i + 2);
+//         if(ispalindrome(final)){
+//             return str[i] + str[i + 1];
+//         }
+//     }
+//     return "not possible"
+//  }
+//     const ans = PalindromeCreator("abjchba");
+//     console.log(ans); 
+// Output: "jc"
+// //   console.log(PalindromeCreator("racecar")); // Output: "palindrome"
+// //   console.log(PalindromeCreator("abcd")); // Output: "not possible"
+
+//----------------------------------------------------------------------------------------//
+
+// Have the function ThreeSum(arr) take the array of integers stored in arr, and determine if
+// any three distinct numbers (excluding the first element) in the array can sum up to the first
+// element in the array. For example: if arr is [8, 2, 1, 4, 10, 5, -1, -1] then there are actually three
+// sets of triplets that sum to the number 8: [2, 1, 5], [4, 5, -1] and [10, -1, -1]. Your program should
+// return the string true if 3 distinct elements sum to the first element, otherwise your program
+// should return the string false. The input array will always contain at least 4 elements.
+
+// function ThreeSum(arr) {
+//     let len = arr.length;
+//     let target = arr[0];
+//     for (let i = 0; i < len; i++) {
+//         for (let j = i + 1; j < len; j++) {
+//             for (let k = i + 2; k < len; k++) {
+//                 if (target === arr[i] + arr[j] + arr[k]);
+//                 return true;
+//             }
+//         }
+//         return false;
+//     }
+// }
+// console.log(ThreeSum([10, 2, 3, 1, 5, 3, 1, 4, -4, -3, -2]));
+
+//---------------------------------------------------------------------------------------//
+
+
+
