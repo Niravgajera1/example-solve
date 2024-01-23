@@ -410,7 +410,7 @@
 //     for(let i= 0 ; i <str.length ; i++){
 //         for (let j = i + 1 ; j < str.length ; j++){
 //             const final = str.slice(0 , i) + str.slice(i+1 , j ) + str.slice(j + 1);
-//             console.log(final);
+// 
 //             if(ispalindrome(final)){
 //                 return str[i] + str[j];
 //             }
@@ -455,6 +455,50 @@
 // console.log(ThreeSum([10, 2, 3, 1, 5, 3, 1, 4, -4, -3, -2]));
 
 //---------------------------------------------------------------------------------------//
+
+// function ArrayJumping(arr) {
+//     var ht = {};
+//     var max_index = arr.indexOf(Math.max(...arr));
+//     var L = arr.length;
+//     for (var i = 0; i < L; i++) {
+//         ht[i] = [left(L, i, arr[i]), right(L, i, arr[i])];
+//     }
+//     if (ht[max_index].includes(max_index)) {
+//         return 1;
+//     }
+//     var travel_set = new Set(ht[max_index]);
+//     for (var step = 2; step <= L; step++) {
+//         var temp_set = new Set(travel_set);
+//         for (var val of temp_set) {
+//             travel_set.add(ht[val][0]);
+//             travel_set.add(ht[val][1]);
+//         }
+//         if (travel_set.has(max_index)) {
+//             return step;
+//         }
+//     }
+//     return -1;
+// }
+
+// function left(length, index, number) {
+//     var left = number % length;
+//     if (left > index) {
+//         left = length + index - left;
+//     } else {
+//         left = index - left;
+//     }
+//     return left;
+// }
+
+// function right(length, index, number) {
+//     var right = number % length;
+//     if (right > length - index - 1) {
+//         right = right + index - length;
+//     } else {
+//         right = right + index;
+//     }
+//     return right;
+// }
 
 
 
