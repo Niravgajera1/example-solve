@@ -531,9 +531,93 @@
 //   For example: "Anne, I vote more cars race Rome-to-Vienna"    
 //   should return true
 
-function PalindromeTwo(str){
+// function PalindromeTwo(str){
+
+// }
+
+// const ans = PalindromeTwo("Noel - sees Leon");
+// console.log(ans);
+
+//-----------------------------------------------------------------------------------------//
+
+// Problem Statement                                            
+//    Have the function DashInsertII(str) insert dashes ('-')     
+//    between each two odd numbers and insert asterisks ('*')     
+//    between each two even numbers in str.                       
+//                                                                
+//    For example: if str is 4546793 the output should be         
+//    454*67-9-3. Don't count zero as an odd or even number. 
+
+
+// function DashInsertII(number) {
+//     let string = String(number);
+//     let dashInsertTwo = new String("");
+//     for(let i=0; i<string.length; i++){
+//         if(i!==string.length-1) {
+//             if(Number(string[i])%2!==0 && Number(string[i+1])%2!==0 && Number(string[i])>0 && Number(string[i+1])>0) dashInsertTwo += string[i] + "-";
+//             else if(Number(string[i])%2===0 && Number(string[i+1])%2===0 && Number(string[i])>0 && Number(string[i+1])>0) dashInsertTwo += string[i] + "*";
+//             else dashInsertTwo += string[i];
+           
+//         }
+//         else if(i===string.length-1) dashInsertTwo += string[i];
+//     }
+//     return dashInsertTwo;
+// }
     
+// // KEEP THIS FUNCTION CALL HERE
+// console.log(DashInsertII(DashInsertII(4546793)));
+
+//------------------------------------------------------------------------------------------//
+
+// function StringReduction(string) { 
+//     let stringReduction = new String("");
+//     let stringReplacements = {
+//         "ab": "c",
+//         "ac": "b",
+//         "bc": "a",
+//         "ca": "b",
+//         "cb": "a"
+//     };
+//     let flag = false;
+//     for(let i=0; i<string.length; i++){
+//         if(i !== string.length-1){
+//             if((string[i] + string[i+1]) in stringReplacements){
+//                 flag = true;
+//                 stringReduction += stringReplacements[string[i] + string[i+1]];
+//                 i++;
+//             }
+//             else stringReduction += string[i];
+//         }
+//         else stringReduction += string[i];
+//     }
+//     if(flag === true) return StringReduction(stringReduction);
+//     else return stringReduction.length;
+// }
+    
+// // KEEP THIS FUNCTION CALL HERE
+// console.log(StringReduction("abcabc"));
+
+//-----------------------------------------------------------------------//
+
+// Have the function FizzBuzz(num) take the num parameter being *
+//  * passed and return all the numbers from 1 to num separated by *
+//  * spaces but replace every number that is divisible by 3       *
+//  * with the word "Fizz", replace every number that is divisible *
+//  * by 5 with the word "Buzz", & every number that is divisible  *
+//  * by both 3 and 5 with the word "FizzBuzz".                    *
+//  * For example: if num is 16, the code should return the string *
+//  * 1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 *
+//  * The input will be within the range 1 - 50.     
+
+function FizzBuzz(num){
+    let str = new String("");
+    for(let i = 1 ; i <= num ; i++){
+       if(i%3 === 0 && i%5 === 0) str += "FizzBuzz";
+       else if(i%3 === 0) str += "Fizz";
+       else if(i%5 === 0) str += "Buzz";
+       else str = i + " ";
+    }
+    return str.trim();
 }
 
-const ans = PalindromeTwo("Noel - sees Leon");
-console.log(ans);
+console.log(FizzBuzz(3));
