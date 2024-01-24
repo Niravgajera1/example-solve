@@ -609,15 +609,43 @@
 //  * 1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 *
 //  * The input will be within the range 1 - 50.     
 
-function FizzBuzz(num){
-    let str = new String("");
-    for(let i = 1 ; i <= num ; i++){
-       if(i%3 === 0 && i%5 === 0) str += "FizzBuzz";
-       else if(i%3 === 0) str += "Fizz";
-       else if(i%5 === 0) str += "Buzz";
-       else str = i + " ";
-    }
-    return str.trim();
-}
+// function FizzBuzz(num){
+//     let str = new String("");
+//     for(let i = 1 ; i <= num ; i++){
+//        if(i%3 === 0 && i%5 === 0) str += "FizzBuzz";
+//        else if(i%3 === 0) str += "Fizz";
+//        else if(i%5 === 0) str += "Buzz";
+//        else str = i + " ";
+//     }
+//     return str.trim();
+// }
 
-console.log(FizzBuzz(3));
+// console.log(FizzBuzz(3));
+
+//-------------------------------------------------------------------------//
+
+// Have the function StringScramble(str1,str2) take both        * 
+//  * parameters being passed and return the string true if a      *
+//  * portion of str1 characters can be rearranged to match str2,  *
+//  * otherwise return the string false.                           *
+//  * For example: if str1 is "rkqodlw" and str2 is "world" the    *
+//  * output should return true. Punctuation and symbols will not  *
+//  * be entered with the parameters.   
+
+function StringScramble(str1,str2){
+    let arr1 = str1.split (' ');
+    let arr2 = str2.split(' ');
+    for(let i=0 ; i <arr1.length ; i++){
+      for (let j =0 ; j < arr2.length ; j++){
+        if(arr1[i] === arr2[j]){
+             arr1.splice(i ,1);
+             arr2.splice(j,1);
+             i--;
+             break;
+        }
+      }
+    }
+    if(arr2.length === 0) return true;
+    else return false;
+}
+console.log(StringScramble("cdoer" , "coder"));
