@@ -191,12 +191,6 @@
 // console.log(BinaryReversal("213"));
 
 //---------------------------------------------------------------------------------------//
-
-
-// hello word add featue one for git problem 
-
-// hello word add featue one for git 
-
 //----------------------------------------------------------------------------------//
 
 // Have the function NextPalindrome(num) take the num parameter being passed and return
@@ -454,73 +448,6 @@
 // }
 // console.log(ThreeSum([10, 2, 3, 1, 5, 3, 1, 4, -4, -3, -2]));
 
-//---------------------------------------------------------------------------------------//
-
-// function ArrayJumping(arr) {
-//     var ht = {};
-//     var max_index = arr.indexOf(Math.max(...arr));
-//     var L = arr.length;
-//     for (var i = 0; i < L; i++) {
-//         ht[i] = [left(L, i, arr[i]), right(L, i, arr[i])];
-//     }
-//     if (ht[max_index].includes(max_index)) {
-//         return 1;
-//     }
-//     var travel_set = new Set(ht[max_index]);
-//     for (var step = 2; step <= L; step++) {
-//         var temp_set = new Set(travel_set);
-//         for (var val of temp_set) {
-//             travel_set.add(ht[val][0]);
-//             travel_set.add(ht[val][1]);
-//         }
-//         if (travel_set.has(max_index)) {
-//             return step;
-//         }
-//     }
-//     return -1;
-// }
-
-// function left(length, index, number) {
-//     var left = number % length;
-//     if (left > index) {
-//         left = length + index - left;
-//     } else {
-//         left = index - left;
-//     }
-//     return left;
-// }
-
-// function right(length, index, number) {
-//     var right = number % length;
-//     if (right > length - index - 1) {
-//         right = right + index - length;
-//     } else {
-//         right = right + index;
-//     }
-//     return right;
-// }
-
-//-----------------------------------------------------------------------//
-
-// function SwitchSort(arr) {
-//     let swap = 0;
-//     let visited = new Array(arr.length).fill(false);
-//     for (let i = 0; i < arr.length; i++) {
-//       let j = i;
-//       let counter = 0;
-//       while (!visited[j]) {
-//         visited[j] = true;
-//         j = arr[j] - 1;
-//         counter = counter + 1;
-//       }
-//       if (counter !== 0) {
-//         swap = swap + (counter - 1);
-//       }
-//     }
-//     return swap;
-//   }
-  
-//----------------------------------------------------------------------------------------//
 
 // Have the function PalindromeTwo(str) take the str parameter  
 //   being passed and return the string true if the parameter is
@@ -557,13 +484,13 @@
 //             if(Number(string[i])%2!==0 && Number(string[i+1])%2!==0 && Number(string[i])>0 && Number(string[i+1])>0) dashInsertTwo += string[i] + "-";
 //             else if(Number(string[i])%2===0 && Number(string[i+1])%2===0 && Number(string[i])>0 && Number(string[i+1])>0) dashInsertTwo += string[i] + "*";
 //             else dashInsertTwo += string[i];
-           
+
 //         }
 //         else if(i===string.length-1) dashInsertTwo += string[i];
 //     }
 //     return dashInsertTwo;
 // }
-    
+
 // // KEEP THIS FUNCTION CALL HERE
 // console.log(DashInsertII(DashInsertII(4546793)));
 
@@ -593,7 +520,7 @@
 //     if(flag === true) return StringReduction(stringReduction);
 //     else return stringReduction.length;
 // }
-    
+
 // // KEEP THIS FUNCTION CALL HERE
 // console.log(StringReduction("abcabc"));
 
@@ -632,20 +559,337 @@
 //  * output should return true. Punctuation and symbols will not  *
 //  * be entered with the parameters.   
 
-function StringScramble(str1,str2){
-    let arr1 = str1.split (' ');
-    let arr2 = str2.split(' ');
-    for(let i=0 ; i <arr1.length ; i++){
-      for (let j =0 ; j < arr2.length ; j++){
-        if(arr1[i] === arr2[j]){
-             arr1.splice(i ,1);
-             arr2.splice(j,1);
-             i--;
-             break;
-        }
-      }
-    }
-    if(arr2.length === 0) return true;
-    else return false;
-}
-console.log(StringScramble("cdoer" , "coder"));
+// function StringScramble(str1,str2){
+//     let arr1 = str1.split ("");
+//     let arr2 = str2.split("");
+//     for(let i=0 ; i <arr1.length ; i++){
+//       for (let j =0 ; j < arr2.length ; j++){
+//         if(arr1[i] === arr2[j]){
+//              arr1.splice(i ,1);
+//              arr2.splice(j,1);
+//              i--;
+//              break;
+//         }
+//       }
+//     }
+//     if(arr2.length === 0) return true;
+//     else return false;
+// }
+// console.log(StringScramble("cdoer" , "coder"));
+
+//---------------------------------------------------------------------------//
+
+// number search
+// function numbersearch(str){
+//       let total = 0 ;
+//     let lettercount = '';
+//     for(let i = 0 ; i < str.length ; i++){
+//         let char = str.charAt(i)
+//         if(!isNaN(char) && char !== " "){
+//             total += parseInt(char);
+//         }
+//         if(/[a-zA-Z]/.test(char)){
+//             lettercount++;
+//         }
+//     }
+//     let avg = Math.round(total / lettercount);
+//     return avg;
+// }
+// const ans = numbersearch("Hello6 9World 2, Nic8e D7ay!");
+// console.log(ans);
+
+//------------------------------------------------------------------------------//
+
+// take the str parameter being passed and return the string true if the parameter is a palindrome, 
+// (the string is the same forward as it is backward) otherwise return the string false. 
+// The parameter entered may have punctuation and symbols but they should not affect whether the string is in fact a palindrome.
+// For example: "Anne, I vote more cars race Rome-to-Vienna" should return true. */
+
+//  function PalindromeTwo(str) { 
+//     let re = /[a-zA-Z]/;
+//     let arr = [];
+//     for(let i = 0 ; i < str.length; i++){
+//         if(str.charAt(i).match(re)){
+//             arr.push(str.charAt(i).toLowerCase());
+//         }
+//     }
+//     let hold =arr.join();
+//     arr = arr.reverse().join();
+//     if(hold == arr){
+//         return true ;
+//     }else{
+//         return false;
+//     }
+//  }
+
+//  const ans = PalindromeTwo("Anne, I vote more cars race Rome-to-Vienna");
+//  console.log(ans);
+
+// -----------------------------------------------------------------------------------------//
+
+// simple mode function
+
+// function simplemode(arr){
+//     var mode = 0 ;
+//     var count2 =0 ;
+//     for(let i = 0 ; i < arr.length ; i++){
+//         count = 0 ;
+//         for (let j = 0 ; j < arr.length ; j++){
+//             if(arr[i] == arr[j] && i !== j ){
+//                 count++;
+//             }
+//             if(count> count2){
+//                 mode = arr[i];
+//                 count2 = count;
+//                 count = 0 ;
+//             }
+//         }
+
+//         }
+//         if(count2 == 0){
+//             return -1;
+//     }
+//     return mode;
+// }
+
+// const ans = simplemode([10, 4, 5, 2, 4]);
+// console.log(ans);
+
+//-------------------------------------------------------------------------------------------//
+
+// function swp 2
+
+// function swap2(str){
+//       let re =  /[a-z]/;
+//       let re2 = /[A-Z]/;
+//       let re3 = /[0-9]/;
+//       let arr = [];
+//       for(let i =0; i <str.length ; i++){
+//         if(str.charAt(i).match(re)){
+//             arr.push(str.charAt(i).toUpperCase());
+//         }else if(str.charAt(i).match(re2)){
+//             arr.push(str.charAt(i).toLowerCase());
+//         }else{
+//             arr.push(str[i]);
+//         }
+//       }
+//       for(let i=0 ; i<str.length ; i++){
+//         if(str.charAt(i).match(re3)){
+//             for(let j=i+1;j<arr.length ; j++){
+//                 if(arr[j]== " "){
+//                     break ;
+//                 }else if(arr[j].match(re3)){
+//                     let hold = arr[i];
+//                     arr[i] = arr[j];
+//                     arr[j] = hold;
+//                 }
+//             }
+//         }
+//       }
+//       return arr.join("");
+// }
+
+// console.log(swap2("6Hello4 -8World, 7 yes3" ))
+
+//-----------------------------------------------------------------------------------------//
+
+//letter count 
+
+// function LetterCountI(str) {
+//     let arr = str.split(" ");
+//     arr = arr.sort((a, b) => b.length - a.length);
+//     for (let i = 0; i < arr.length; i++) {
+//         let nwarr = [];
+
+//         for (let j = 0; j < arr[i].length; j++) {
+//             if (nwarr.indexOf(arr[i][j]) === -1) {
+//                 nwarr.push(arr[i][j]);
+//             } else {
+//                 return arr[i];
+//             }
+//         }
+//     }
+
+//     return -1;
+// }
+
+// const ans = LetterCountI("no word");
+// console.log(ans);
+
+
+//------------------------------------------------------------------------------//
+
+// counstruct the binary treee
+
+// function binarytree(strArr) {
+//     let parents = {};
+//     let children = {};
+
+//     for (let i = 0; i < strArr.length; i++) {
+//         let pair = strArr[i].replace(/[()]/g, "").split(",");
+//         let child = pair[0]
+//         let parent = pair[1]
+//         if (parents[parent]) {
+//             parents[parent].push(child);
+//         } else {
+//             parents[parent] = [child];
+//         }
+//         if (parents[parent].length > 2) {
+//             return false;
+//         }
+//         if (children[child]) {
+//             return false;
+//         } else {
+//             children[child] = [parent];
+//         }
+//     }
+//     return true;
+// }
+
+// console.log(binarytree(["(1,2)", "(2,4)", "(5,7)", "(7,2)", "(9,5)"]))
+/////////////////////////////////////////////////////////////////////////////
+
+// function permutation(people) {
+//     let result = [];
+//     if (people.length === 0) return [];
+//     if (people.length === 1) return [people];
+//     for (let i = 0; i < people.length; i++) {
+//         const currentPeople = people[i];
+//         const remainPeople = people.slice(0, i).concat(people.slice(i + 1));
+//         const permutateRemain = permutation(remainPeople);
+//         for (let j = 0; j < permutateRemain.length; j++) {
+//             let res = [currentPeople].concat(permutateRemain[j]);
+//             result.push(res);
+//         }
+//     }
+//     return result;
+// }
+// function checkRelation(relation, conditions) {
+
+//     for (let i = 0; i < conditions.length; i++) {
+//         let [person1, condition, person2] = conditions[i].split('');
+//         if (condition === '<')
+//             [person1, person2] = [person2, person1];
+//         let ind1 = relation.indexOf(person1);
+//         let ind2 = relation.indexOf(person2);
+//         if (ind1 <= ind2) return false;
+//     }
+//     return true;
+// }
+// function lineOrdering(strArr) {
+//     // let people = Array.from(new Set(strArr.join(',').match(/[A-Z]+/g)));
+//     let people = [];
+//     strArr.map(element => {
+//         let [personA, condition, personB] = element.split('');
+//         people.push(personA, personB);
+//     });
+//     people = [...new Set(people)];
+//     let permutationPeople = permutation([...people]);
+//     let truePair = [];
+//     permutationPeople.forEach(element => {
+//         const isValid = checkRelation(element, strArr)
+//         if (isValid) truePair.push(element);
+//     });
+//     return truePair.length;
+// }
+//   console.log(lineOrdering(["J>B", "B<S", "D>J"]));
+//---------------------------------------------------------------------------------------//
+
+// function ArrayJumping(arr) {
+//     var ht = {};
+//     var max_index = arr.indexOf(Math.max(...arr));
+//     var L = arr.length;
+//     for (var i = 0; i < L; i++) {
+//         ht[i] = [left(L, i, arr[i]), right(L, i, arr[i])];
+//     }
+//     if (ht[max_index].includes(max_index)) {
+//         return 1;
+//     }
+//     var travel_set = new Set(ht[max_index]);
+//     for (var step = 2; step <= L; step++) {
+//         var temp_set = new Set(travel_set);
+//         for (var val of temp_set) {f(primecounter < num){
+   //  isprime()
+//             travel_set.add(ht[val][0]);
+//             travel_set.add(ht[val][1]);
+//         }
+//         if (travel_set.has(max_index)) {
+//             return step;
+//         }
+//     }
+//     return -1;
+// }
+
+// function left(length, index, number) {
+//     var left = number % length;
+//     if (left > index) {urrentnumber
+//         left = length + index - left;
+//     } else {
+//         left = index - left;
+//     }
+//     return left;
+// }
+
+// function right(length, index, number) {
+//     var right = number % length;
+//     if (right > length - index - 1) {
+//         right = right + index - length;
+//     } else {
+//         right = right + index;
+//     }
+//     return right;
+// }
+
+//-----------------------------------------------------------------------//
+
+// function SwitchSort(arr) {
+//     let swap = 0;
+//     let visited = new Array(arr.length).fill(false);
+//     for (let i = 0; i < arr.length; i++) {
+//       let j = i;
+//       let counter = 0;
+//       while (!visited[j]) {
+//         visited[j] = true;
+//         j = arr[j] - 1;
+//         counter = counter + 1;
+//       }
+//       if (counter !== 0) {
+//         swap = swap + (counter - 1);
+//       }
+//     }
+//     return swap;
+//   }
+
+//---------------------------------------------------------------------------------------//
+
+//prime movers                                     
+
+// function isprime(number){
+//     if(number <= 1){
+//         return  false;
+//     }
+//     for(let i = 2 ; i <= Math.sqrt(number);i++){
+//         if(number % i ===0){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// function primemover(num){
+//   let primecounter = 0 ;
+//   let currentnumber = 2;
+//   while (primecounter < num){
+//     if(isprime(currentnumber)){
+//         primecounter++;
+//     }if(primecounter<num){
+//         currentnumber++;
+//     }
+//   }  
+//   return currentnumber;
+//   } 
+//   console.log(primemover(100));
+
+//---------------------------------------------------------------------------------------//
+
+
