@@ -892,4 +892,62 @@
 
 //---------------------------------------------------------------------------------------//
 
+// Have the function ArithGeo(arr) take the array of numbers    *
+//  * stored in arr and return the string "Arithmetic" if the      *
+//  * sequence follows an arithmetic pattern or return "Geometric" *
+//  * if it follows a geometric pattern. If the sequence doesn't   *
+//  * follow either pattern return -1. An arithmetic sequence is   *
+//  * one where the difference between each of the numbers is      *
+//  * consistent, where as in a geometric sequence, each term after*
+//  * the first is multiplied by some constant or common ratio.    *
+//  * Arithmetic example: [2, 4, 6, 8] and                         *
+//  * Geometric example: [2, 6, 18, 54]. Negative numbers may be   *
+//  * entered as parameters, 0 will not be entered, and no array   *
+//  * will contain all the same elements.  
 
+// function ArithGeo(arr){
+//    let arith = arr[1]-arr[0];
+//    let geo = arr[1]/arr[2];
+//    for (let i = 0; i<= arr.length ; i++){
+//       if(arr[i+1]-arr[i]=== arith){
+//          return "arithmetic";
+//       }if(arr[i+1]/arr[i]=== geo){
+//          return "geometric";
+//       }else{
+//          return -1;
+//       }
+//    }
+// }
+// console.log(ArithGeo([5,10,15]))
+
+//------------------------------------------------------------//
+
+// Have the function AdditivePersistence(num) take the num      *
+//  * parameter being passed which will always be a positive       *
+//  * integer and return its additive persistence which is the     *
+//  * number of times you must add the digits in num until you     *
+//  * reach a single digit. For example: if num is 2718 then your  *
+//  * program should return 2                                      *
+//  * because 2 + 7 + 1 + 8 = 18 and 1 + 8 = 9 and you stop at 9.  *
+
+function AdditivePersistence(num){
+   num = String(num);
+   if(num.length ===1){
+      return 0;
+   }
+   let count = 0 ;
+   while(num.length !== 1){
+      let sum = 0 ;
+      for(let i=0 ; i<num.length ; i++){
+         sum+=Number(num[i]);
+      } 
+      count ++;
+      sum =  String(sum)
+      if(sum.length === 1){
+         return count;
+      }
+      num = sum ;
+   }
+}
+
+console.log(AdditivePersistence(19))

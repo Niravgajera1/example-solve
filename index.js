@@ -1295,37 +1295,59 @@ function leetPromise() {
 // console.log(elec.displayVars());
 // console.log(elec.display());
 
-function isPrime(number) {
-  if (number <= 1) {
-    return false;
-  }
+// function isPrime(number) {
+//   if (number <= 1) {
+//     return false;
+//   }
 
-  for (let i = 2; i <= Math.sqrt(number); i++) {
-    if (number % i === 0) {
-      return false;
-    }
-  }
+//   for (let i = 2; i <= Math.sqrt(number); i++) {
+//     if (number % i === 0) {
+//       return false;
+//     }
+//   }
 
-  return true;
+//   return true;
+// }
+
+// function PrimeMover(num) {
+
+//   let primeCount = 0;
+//   let currentNumber = 2;
+
+//   while (primeCount < num) {
+//     if (isPrime(currentNumber)) {
+//       primeCount++;
+//     }
+//     if (primeCount < num) {
+//       currentNumber++;
+//     }
+//   }
+
+//   return currentNumber;
+// }
+
+// // Example usage:
+// const num = 100;
+// console.log(`The ${num}th prime number is: ${PrimeMover(num)}`);
+
+function AdditivePersistence(num){
+  num = String(num);
+  if(num.length ===1){
+     return 0;
+  }
+  let count = 0 ;
+  while(num.length !== 1){
+     let sum = 0 ;
+     for(let i=0 ; i<num.length ; i++){
+        sum+=Number(num[i]);
+     } 
+     count ++;
+     sum =  String(sum)
+     if(sum.length === 1){
+        return count;
+     }
+     num = sum ;
+  }
 }
 
-function PrimeMover(num) {
-
-  let primeCount = 0;
-  let currentNumber = 2;
-
-  while (primeCount < num) {
-    if (isPrime(currentNumber)) {
-      primeCount++;
-    }
-    if (primeCount < num) {
-      currentNumber++;
-    }
-  }
-
-  return currentNumber;
-}
-
-// Example usage:
-const num = 100;
-console.log(`The ${num}th prime number is: ${PrimeMover(num)}`);
+console.log(AdditivePersistence(19))
