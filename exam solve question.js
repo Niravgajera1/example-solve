@@ -65,9 +65,9 @@
 // // Example usage:
 // const result = BracketCombinations(3);
 // console.log(result); // Output: 5
- //------------------------------------------------------------//
+//------------------------------------------------------------//
 
- // closest enemy
+// closest enemy
 
 //  function makemove(arr){
 //   let count = 0 ;
@@ -129,3 +129,483 @@
 // console.log(distictcount([0,1,2,2,3,4,5,5,5]))
 //---------------------------------------------------------------------------------------------//
 
+// keypress
+
+// function keypress(strArr){
+//   let str1 = strArr[0].split(",");
+//   let str2 = strArr[1].split(",");
+
+//   let s1 = " ";
+//   let s2 = " ";
+//    for(let i= 0 ; i< str1.length;i++){
+//     if(str1[i]==="-B"){
+//         continue;
+//     }if(str1[i+1] ==="-B"){
+//         s1 += str1[i];
+//     }else{
+//         i++;
+//     }
+//    }
+//    for(let i=0 ; i< str2.length ; i++){
+//     if(str2[i]=== "-B"){
+//         continue;
+//     }if(str2[i+1] === "-B"){
+//         s2 += str2[i];
+//     }else{
+//         i++
+//     }
+//    }
+//      return s1 === s2 ? true : false ;
+// }
+
+// console.log(keypress(["a,b,c,d", "a,b,c,-B"]));
+
+//-------------------------------------------------------------------------//
+
+//h distance
+
+// function hdistance(stArr){
+//     let count= 0 ;
+//     let str1 = stArr[0];
+//     let str2 = stArr[1];
+
+//     for(let i=0 ; i<str1.length ; i++){
+//             if(str1[i] !== str2[i]){
+//                 count++;
+//             }
+//         }
+//         return count;
+//     }
+
+
+//  console.log(hdistance(["10011", "10100"] ))
+
+//--------------------------------------------------------------------//
+
+// lru function 
+
+// function lrucase(strArr){
+//     let casewindow = 5 ;
+//     let arrcase = [];
+//     let isold = false;
+
+//     for(let i=0; i<strArr.length ; i++){
+//         isold = false ;
+//         if(arrcase.length === casewindow){
+//             if(arrcase.includes(strArr[i])){
+//                 isold=true;
+//             }else{
+//                 arrcase.splice(0,1);
+//             }
+//         }
+//         if(arrcase.includes(strArr[i])){
+//             isold=true;
+//         }
+//         if(isold){
+//             let index = arrcase.indexOf(strArr[i])
+//             arrcase.splice(index,1);
+//         }
+//         arrcase.push(strArr[i]);
+//     }
+//      return arrcase.join("-");
+// }
+
+// console.log(lrucase(["A", "B", "A", "C", "A", "B"] ))
+
+//-0-------------------------------------------------------------------//
+
+// longest consicutive
+
+// function lcm(arr) {
+//     arr.sort(function (a, b) { return a - b });
+//     let max = 1;
+//     let temp = [];
+//     let flag = false;
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i + 1] === arr[i]) {
+//             continue;
+//         }
+//         if (arr[i + 1] - arr[i] === 1) {
+//             temp.push(arr[i])
+//             flag = true;
+//         } else {
+//             if (flag) {
+//                 falg = false;
+//                 temp.push(arr[i]);
+//                 if (temp.length > max) {
+//                     max = temp.length;
+//                 }
+//                 temp = []
+//             }
+//         }
+//     }
+//     return max;
+// }
+
+// console.log(lcm([5, 6, 1, 2, 8, 9, 7]))
+
+///---------------------////-//-/-//-//-//-/-/////////////////-------------------//
+
+//sub array max
+
+//  function subarray(arr){
+//     let sum = 0;
+//     let temp = 0;
+//     for(let i=0 ; i<arr.length ;i++){
+//         temp = arr[i];
+//         for(let j=i+1;j<arr.length ;j++){
+//             temp+=arr[j];
+//             if(temp<0){
+//                 break;
+//             }if(temp >= sum){
+//                 sum=temp;
+//             }
+//             if(arr[i]>sum){
+//                 sum = arr[i];
+//             }
+//         }
+//     }
+//     return sum;
+//  }
+
+//  console.log(subarray([3, -1, -1, 4, 3, -1]))
+
+//-------------------------------------------------------------------------//
+
+//neararest smaller value
+// function smallervalue(arr){
+//     let resul = [];
+//     for(let i=0 ; i<arr.length ; i++){
+//         let smallest = -1;
+//         for(let j=i-1 ; j>0 ;j-- ){
+//             if(arr[j]<=arr[i]){
+//                 smallest = arr[j];
+//                 break;
+//             }
+//         }
+//          resul.push(smallest);
+//     }
+//     return resul.join(" ");
+// }
+// console.log(smallervalue([5, 3, 1, 9, 7, 3, 4, 1]  ))
+
+//-------------------------------------------------------------------------//
+
+//offlineminimum
+
+// function offlineminimum(strArr){
+//     let integer = [];
+//     let result = [];
+
+//     for(let i=0; i<strArr.length ;  i++){
+//         if(strArr[i]==="E"){
+//             let smaller = Math.min(...integer);
+//             integer.splice(integer.indexOf(smaller),1);
+//             result.push(smaller);
+//         }else{
+//             integer.push(parseInt(strArr[i]));
+//         }
+//     }
+//     return result.join(",");
+// }
+// console.log(offlineminimum(["4","E","1","E","2","E","3","E"] ))
+
+//---------------------------------------------------------//
+
+// function rectenglearea(strarr){
+//   let a = strarr[0].slice(1).slice(0,strarr[0].legth-2).split(" ");
+//   let b= strarr[1].slice(1).slice(0,strarr[1].legth-2).split(" ");
+//   let c = strarr[2].slice(1).slice(0,strarr[2].legth-2).split(" ");
+//   let d = strarr[3].slice(1).slice(0,strarr[3].legth-2).split(" ");
+
+//   let x1 = Math.abs(a[0]);
+//   let y1 = Math.abs(a[1]);
+//   let x2 = Math.abs(b[0]);
+//   let y2 = Math.abs(b[1]);
+//   let x3 = Math.abs(c[0]);
+//   let y3 = Math.abs(c[1]);
+//   let x4 = Math.abs(d[0]);
+//   let y4 = Math.abs(d[1]);
+  
+//   let array1 = [x1,x2,x3,x4];
+//   let array2 = [y1,y2,y3,y4];
+
+
+//   return (Math.max.apply(Math ,array1) - Math.min.apply(Math,array1)) * (Math.max.apply(Math,array2) - Math.min.apply(Math,array2));
+
+// }
+// console.log(rectenglearea( ["(1 1)","(1 3)","(3 1)","(3 3)"] ))
+
+//---------------------------------------------------------------------------------//
+
+// function ArrayAdditionI(arr)
+
+
+
+// function arrayAddition(arr){
+//     let target ; 
+//     let addarr = arrprepare(arr);
+//     let len = addarr.length;
+//     let prem = Math.pow(2,len);
+
+//     for(let i=0 ; i<len ;i++){
+//         prem =(i).toString(2);
+//         strlen = prem.length;
+//         let counter =0;
+//         for(let j=0 ; j<strlen;j++){
+//             if(arr[j]=== "1"){
+//                 counter += arr[j];
+//             }
+            
+//             }
+//             if(counter === target){
+//                 return true;
+//         }
+//     }
+//        return false;
+// }
+// function arrprepare(arr2){
+//     arr2.sort((a,b)=>a-b);
+//     target = arr2.pop();
+//     return arr2;
+// }
+
+// console.log(arrayAddition([5,7,16,1,2]))
+
+//--------------------------------------------------------------------------------------//
+
+//array mataching
+
+// function ArrayMatching(strArr){
+//     let array1 = strArr[0].match(/\d+/g).map(Number);
+//     let array2 = strArr[1].match(/\d+/g).map(Number);
+//     let len = Math.max(array1.length, array2.length);
+//     let result = [];
+//     for(let i=0 ; i<len ; i++){
+//        let sum = (array1[i] || 0) + (array2[i]||0);
+//        result.push(sum);
+//     }
+//     return result.join("-")
+// }
+
+// console.log(ArrayMatching(["[1, 2, 5, 6]", "[5, 2, 8, 11]"]))
+
+//------------------------------------------------------------------------------------//
+ //array similar
+
+//  function Arraysim(a,b){
+//     if(a.length !==b.length){
+//         return false;
+//     }
+
+//     let diffindex = []
+//     for(let i=0 ; i<a.length ; i++){
+//         if(a[i] !== b[i]){
+//             diffindex.push(i);
+//         }
+//         if(diffindex.length>2){
+//             return false;
+//         }
+//         if(diffindex.length === 0){
+//             return true;
+//         }
+//         if(diffindex.length === 2){
+//             [leftindex,rigthindex] = diffindex
+//             [a[leftindex],a[rigthindex]] = [a[rigthindex], a[leftindex]];
+//             if(JSON.stringify(a) === JSON.stringify(b)){
+//                 return true;
+//             }
+//         }
+//     }
+//     return false;
+//  }
+
+//  console.log(Arraysim([1,2,3],[1,3,2]))
+
+//----------------------------------------------------------------------//
+
+//bitwise one 
+
+// function BitwiseOne(StrArr){
+//     let arr1 = StrArr[0];
+//     let arr2 = StrArr[1];
+//     let res = [];
+//     for(let i=0; i<arr1.length ; i++){
+//         if(arr1[i]=='1' || arr2[i] == '1') res+= '1';
+//         else if(arr1[i] == '0' || arr2[i] == '0') res+= '0';
+//     }
+//     return res;
+// }
+// console.log(BitwiseOne(["100", "000"] ))
+//=---------------------------===-=-------=----=--=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-//
+
+// changing chequense
+
+// function ChangingSequence(arr){
+//     let type = arr[0] - arr[1] > 0 ? 'des' : 'ase';
+//     for(let i=0;i<arr.length-1;i++){
+//         let typ = arr[i] - arr[i+1] > 0  ? 'des':'ase';
+//         if(type == typ){
+//             continue;
+//         }else{
+//             return i;
+//         }
+//     }
+//     return -1;
+// }
+// console.log(ChangingSequence([-4, -2, 9, 10]  ))
+
+//-----------------------=-=-=-=============================---------------=-=-=-=-=-=//
+
+// counting anargams
+
+// function countin(str){
+//     let strarr = str.split(" ").sort();
+//     let count = 0 ;
+//     for(let i=0;i<strarr.length ; i++){
+//         for(let j=i+1 ; j<strarr.length;j++){
+//             if(strarr[i]===strarr[j]){
+//                 break;
+//             }
+//             if(strarr[i].split("").sort().join() === strarr[j].split("").sort().join()){
+//                 count++;
+//                 break;
+//             }
+//         }
+//     }
+//    return count;
+// }
+
+// console.log(countin("aa aa odg dog gdo"))
+//-----------------------------------------------------------------------------------------//
+
+// function Find(strArr){
+//     let arr1 = strArr[0].split(",");
+//     let arr2 = strArr[1].split(",");
+//     let len1 = arr1.length ;
+//     let len2 = arr2.length ;
+//     let narray=[];
+//     if (len1 >= len2 ){
+//         for(let i=0;i<len1;i++)
+//         {
+//             if( arr2.includes(arr1[i]))
+//             {
+//              narray.push(arr1[i]);
+//             }
+//         }
+//     }else{
+//         for(let i=0;i<len2;i++){
+//             if(arr1.includes( arr1[i])){
+//              narray.push(arr2[i]);
+//             }
+//         }
+//     }
+    
+//       return narray.join(",")
+// }
+// console.log(Find(["1, 3, 4, 7, 13,9", "1, 2, 4, 13, 15"]))
+
+//--------------------------------------------------------------------------------//
+
+// function Meanmode(arr){
+//     let modelist ={};
+//     let count = 0 ;
+//     let max = 0;
+//     let sum =0 ;
+//     for(let i=0 ; i<arr.length ;i++){
+//         if(modelist[arr[i]]){
+//             modelist[arr[i]]++;
+//         }else{
+//             modelist[arr[i]] =1;
+//         }if(count<modelist[arr[i]]){
+//             count=modelist[arr[i]];
+//             max = arr[i];
+//         }
+//         sum += arr[i];
+
+//     }
+//     let mean = sum / arr.length;
+//     if(count === 1) return 0 ;
+//     return (mean === max) ? 1 :0 ;
+
+// }
+// console.log(Meanmode([5, 3, 3, 3, 1]))
+
+//-------------------------------------------------------------------------//
+
+// function OtherProducts(arr){
+//     let res = [];
+//     for(let i=0 ; i<arr.length ; i++){
+//         let product = 1;
+//      for(let j=0 ; j<arr.length ; j++){
+//         if(i !== j){
+//             product *= arr[j];
+//         }
+          
+//      }
+//       res.push(product);
+//     }
+
+//     return res.join("-");
+// }
+// console.log(OtherProducts([1,4,3] ))
+//-----------------------------------------------------------------------------//
+
+// function OverlappingRanges(arr){
+//      let MaxLowerBound = Math.max(arr[0],arr[2]);
+//      let MinUpperBound = Math.min(arr[1],arr[3]);
+//      let differnce = (MinUpperBound-MaxLowerBound) + 1;
+//      if(differnce>= arr[4]){
+//         return true;
+//      }else{
+//         return false;
+//      }
+
+// }
+// console.log(OverlappingRanges([1,8,2,4,4] ))
+//--------------------------------------------------------------//
+
+// function second(arr){
+//     arr = arr.sort((a,b)=> a-b);
+//     arr = [...new Set(arr)];
+//     let len = arr.length;
+//     if(len >= 2){
+//        return `${arr[1]} ${arr[arr.length-2]}`
+//     }else{
+//         return "not possible";
+//     }
+
+// }
+
+// console.log(second([7, 7, 12, 98, 106]))
+
+//-----------------------------------------------------------------------------------//
+
+// function stringcalculator(str){
+//     return eval(str);
+// }
+// console.log(stringcalculator("100*2**4"))
+
+//------------------------------------------------------------------------------------//
+
+function summultiplier(arr){
+    let sum =0;
+    for(let i =0 ; i<arr.length ;i++){
+        sum+= arr[i];
+        
+    }
+    let sum1 = 2*sum;
+    console.log(sum1)
+    for(let i=0 ; i<arr.length-1 ;i++){
+        for(let j=i+1 ; j < arr.length-1 ;j++){
+            //console.log(arr[i],arr[j])
+            if(arr[i]*arr[j] > sum1){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+console.log(summultiplier([1, 1, 2, 10, 3, 1, 12] ))
