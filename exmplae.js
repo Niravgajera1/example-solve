@@ -183,7 +183,8 @@
 //     }
 //      for(let i = 0 ; i <binary.length ; i++){
 //         newstr = binary[i] + newstr ; 
-
+//         console.log(newstr);
+//         console.log(binary)
 //      }
 //      return parseInt(newstr , 2); 
 // }
@@ -809,7 +810,6 @@
 //     for (var step = 2; step <= L; step++) {
 //         var temp_set = new Set(travel_set);
 //         for (var val of temp_set) {f(primecounter < num){
-   //  isprime()
 //             travel_set.add(ht[val][0]);
 //             travel_set.add(ht[val][1]);
 //         }
@@ -951,3 +951,53 @@
 // }
 
 // console.log(AdditivePersistence(19))
+
+function MissingDigit(str) {
+   // Split the equation into three parts: operand1, operand2, result
+   const parts = str.split(" ");
+ 
+   // Check which part contains 'x'
+   let xIndex;
+   if (parts[0].includes("x")) {
+     xIndex = 0;
+   } else if (parts[2].includes("x")) {
+     xIndex = 2;
+   } else {
+     xIndex = 4;
+   }
+ 
+   // Evaluate the equation with x replaced by 0, 1, ..., 9
+   for (let digit = 0; digit < 10; digit++) {
+     parts[xIndex] = digit.toString();
+     const evaluatedResult = calculate(parts);
+ 
+     // Check if the evaluated result matches the expected result
+     if (evaluatedResult === parseInt(parts[4])) {
+       return digit;
+     }
+   }
+ }
+ 
+ // Helper function to perform safe evaluation
+ function calculate(parts) {
+   const [operand1, operator, operand2] = parts;
+ 
+   switch (operator) {
+     case "+":
+       return parseInt(operand1) + parseInt(operand2);
+     case "-":
+       return parseInt(operand1) - parseInt(operand2);
+     case "*":
+       return parseInt(operand1) * parseInt(operand2);
+     case "/":
+       return parseInt(operand1) / parseInt(operand2);
+     default:
+       throw new Error("Invalid operator");
+   }
+ }
+ 
+ // Example usage:
+ const result = MissingDigit("3x + 12 = 46");
+ console.log(result);
+ 
+ 

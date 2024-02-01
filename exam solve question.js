@@ -589,23 +589,276 @@
 
 //------------------------------------------------------------------------------------//
 
-function summultiplier(arr){
-    let sum =0;
-    for(let i =0 ; i<arr.length ;i++){
-        sum+= arr[i];
+// function summultiplier(arr){
+//     let sum =0;
+//     for(let i =0 ; i<arr.length ;i++){
+//         sum+= arr[i];
         
-    }
-    let sum1 = 2*sum;
-    console.log(sum1)
-    for(let i=0 ; i<arr.length-1 ;i++){
-        for(let j=i+1 ; j < arr.length-1 ;j++){
-            //console.log(arr[i],arr[j])
-            if(arr[i]*arr[j] > sum1){
-                return true;
-            }
-        }
-    }
-    return false;
-}
+//     }
+//     let sum1 = 2*sum;
+//     console.log(sum1)
+//     for(let i=0 ; i<arr.length-1 ;i++){
+//         for(let j=i+1 ; j < arr.length-1 ;j++){
+//             //console.log(arr[i],arr[j])
+//             if(arr[i]*arr[j] > sum1){
+//                 return true;
+//             }
+//         }
+//     }
+//     return false;
+// }
 
-console.log(summultiplier([1, 1, 2, 10, 3, 1, 12] ))
+// console.log(summultiplier([1, 1, 2, 10, 3, 1, 12] ))
+
+//--------------------------------------------------------------//
+// function alphabetsearch(str){
+//     let sortstr = Array.from (new Set(str.split("").sort()));
+//     let count = 0 ;
+//     for(let i = 0 ; i <sortstr.length ;i++){
+//         if(sortstr[i].toLowerCase()>= 'a' && sortstr[i].toLowerCase() <= 'z'){
+//             count++;
+//         }
+//     }
+//     return (count === 26 ) ? true : false;
+// }
+// console.log(alphabetsearch("zacxyjbbkfgtbhdaielqrm45pnsowtuv" ))
+
+//////////---------------------------------------------------/////
+
+// ascii convert 
+
+// function ascii(str){
+//     let newstr = " ";
+//     for(let i=0 ; i<str.length ; i++){
+//         if(str[i] === " "){
+//             newstr+= arr[i];
+//         }else{
+//             newstr += str.charCodeAt(i);
+//         }
+//     }
+//     return newstr;
+// }
+
+// console.log(ascii("dog"))
+
+//-------------------------------------------------------///
+
+// function BinaryReversal(str){
+//     let binary = parseInt(str).toString(2);
+//     let len = binary.length;
+//     let size = (len/8) * 8;
+//     let newstr = " ";
+//     if(len<size){
+//         binary = '0' + binary ;
+//     }
+//     for(let i=0 ; i <binary.length ; i++){
+//         newstr = binary[i] + newstr;
+//     }
+//     return parseInt(newstr,2);
+// }
+
+// console.log(BinaryReversal("213"))
+
+//-------------------------------------------------------------------//
+
+// function Caserchiper(str,num){
+//     let arr =[];
+//     let re = /[a-z]/i;
+//     for(let i=0 ; i<str.length ; i++){
+//         if(str[i].match(re)){
+//             arr.push(str.charCodeAt(i) + num);
+//         }else{
+//             arr.push(str[i]);
+//         }
+//     }
+//     for(let i=0;i<arr.length ; i++){
+//         arr[i] = String.fromCharCode(arr[i]);
+//     }
+//   return arr.join("");
+// }
+// console.log(Caserchiper("Hello",4))
+
+//--------------------------------------------------------------------//
+
+// function uservalidation(str){
+//     if(str.length <4 || str.length>25){
+//         return false
+//     }if(!str[0]==/[a-zA-Z]/g){
+//         return false;
+//     }if(str[str.length-1]==="_"){
+//         return false;
+//     }
+//     for(let i=0 ; i<str.length ; i++){
+//         if(!(str[i].match(/[a-zA-Z]/g) || str[i].match(/[1-9]/g) | str[i] === '_')){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+// console.log(uservalidation("u__hello_world123" ))
+
+//---------------------------------------------------------------------------//
+
+// function constcount(str){
+//     let count =0 ;
+//     let vowel = /^[aeiouAEIOU]$/;
+//     for(let i=0;i<str.length ; i++){
+//         if(!str[i].match(vowel) && str[i].toLowerCase() >= "a" && str[i].toLowerCase() <= "z"){
+//             count++
+//         }
+//     }
+//     return count;
+// }
+
+// console.log(constcount("Hello World" ))
+
+//-----------------------------------------------------------------------//
+
+// function dashinsert(str){
+//     let nstr = " ";
+//     for(let i=0;i<str.length ; i++){
+//         if(str[i] % 2 !=0 && str[i+1]%2 != 0){
+//             nstr += str[i] + "-";
+//         }else{
+//             nstr += str[i]
+//         }
+//     }
+//     return nstr;
+// }
+
+// console.log(dashinsert("56730"))
+
+//-------------------------------------------------\\\-----
+
+// function DashInsertII(str){
+//     let nstr = " ";
+//     for(let i=0 ; i<str.length ; i++){
+//         if(str[i]%2 == 0 && str[i+1]%2 == 0){
+//             nstr+= str[i] + "*";
+//         }else if(str[i]%2 !== 0 && str[i+1]%2 !==0){
+//             nstr += str[i] + "-";
+//         }else{
+//             nstr += str[i]
+//         }
+//         if(i===str.length-1){
+//             return nstr += str[i];
+//         }
+//     }
+    
+//     return nstr
+// }
+// console.log(DashInsertII("56647304"))
+//-----------------------------------------------------------------------//
+
+// function ox(str){
+//     let re1 = str.replace(/[^x]/g,'');
+//     let re2 = str.replace(/[^o]/g,'');
+//     let xlen = re1.length;
+//     let olen = re2.length;
+
+//     return xlen === olen ? true : false;
+// }
+// console.log(ox("oooxoxx"))
+
+////////////////////////////////////////////////////////////////////////
+
+// function leterchanges(str){
+//     let nstr = " ";
+//     let re1 = /^[A-Za-z]$/;
+//     let re2 = /^[aeiouAEIOU]$/ ;
+//     for(let i=0;i<str.length ; i++){
+//       if(str[i].match(re1)){
+//         if(String.fromCharCode(str.charCodeAt(i)+1).match(re2)){
+//           nstr+= String.fromCharCode(str.charCodeAt(i)+1).toLowerCase();
+//         }else{
+//           nstr += String.fromCharCode(str.charCodeAt(i)+1);
+//         }
+//       }else{
+//         nstr += str[i];
+//       }
+//     }
+//     return nstr;
+//   }
+  
+//   console.log(leterchanges("hello*3"))
+
+////////////////////////////////////////////////////////////////////
+
+//longest word
+
+// function longestword(sen){
+//     sen = sen.replace(/[^\w\s]/g,'').split(' ');
+//     sen = sen.sort((a,b) => a-b)
+//     let longestword = '';
+//     for(let i=0; i<sen.length;i++){
+//         let currentword = sen[i];
+//         if(currentword.length>longestword.length){
+//             longestword = sen[i];
+//         }
+//     }
+//     return longestword;
+// }
+// console.log(longestword("fun&!! time"))
+
+//////////////////////////////////////////////////////////////////
+
+//matching charcter
+
+// function MatchingCharacters(str) {
+//     let uniq = 0;
+//     for(let i=0;i<str.length;i++){
+//         for(let j=i+1;j<str.length;j++){
+//             if(str[i]===str[j]){
+//                 const sub= str.substring(i+1,j);
+//                 const uniqc = new Set(sub.split('')).size;
+//                 if(uniqc>uniq){
+//                     uniq =uniqc;
+//                 }
+//             }
+
+//         }
+//     }
+//     return uniq;
+//   }
+  
+//   // Example usage:
+//   const result = MatchingCharacters("mmmerme" );
+//   console.log(result);
+  
+//---------------------------------------------------------------------------------------//
+
+//number incoding
+
+// function numberencoding(str){
+//     let nstr = '';
+//     for(let i=0;i<str.length;i++){
+//         if(str[i].match(/^[a-z]+$/)){
+//             nstr += String.fromCharCode (str.charCodeAt(i)-97+1);
+//         }else if(str[i].match(/^[A-Z]+$/)){
+//             nstr += String.fromCharCode(str.charCodeAt(i)-65+1);
+//         }else{
+//             nstr += str[i];
+//         }
+//     }
+//     return nstr;
+// }
+
+
+
+// function NumberEncoding(string) {
+//     let numberEncoding = new String("");
+//     for(let i=0; i<string.length; i++){
+//         if(string[i].match(/^[a-z]+$/)) numberEncoding += String(string.charCodeAt(i) - 97 + 1);
+//         else if(string[i].match(/^[A-Z]+$/)) numberEncoding += String(string.charCodeAt(i) - 65 + 1);
+//         else numberEncoding += string[i];
+//     }
+//     return numberEncoding;
+// }
+// console.log(NumberEncoding("jaj-a"))
+//////////////////////////////////////////////////
+
+// function numberreverse(str){
+//     return str.split(' ').reverse().join(' ');
+// }
+
+// console.log(numberreverse("1 2 3"))
