@@ -999,5 +999,38 @@ function MissingDigit(str) {
  // Example usage:
  const result = MissingDigit("3x + 12 = 46");
  console.log(result);
+
+///---------------------------------------------------------------------------------//
+let first = '+$+++ a2beeedehhh';
+let second = '';
+let third = '';
+
+let input = first.split(' ');
+let pattern = input[0];
+let string = input[1];
+
+let regex = '';
+
+for(let i = 0; i < pattern.length; i++){
+  if(pattern[i] === '+'){
+    regex += '[a-z]';
+  }
+  if(pattern[i] == '$'){
+    regex += '[0-9]';
+  }
+  if(pattern[i] === '*'){
+    if(pattern[i+1] === '{'){
+      regex +='.{${pattern[i+2]}}'
+
+    }
+    else{
+      regex += '.{3}';
+    }
+
+  }
+}
+let final = new RegExp('^' + regex + '$');
+let result = final.test(string);
+console.log(result);
  
  
